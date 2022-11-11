@@ -10,16 +10,19 @@
   font-weight: 700;
   color: brown;
   margin-top: 3rem;
-  margin-left: 5rem;
+  margin-left: rem;
 }
 .sub-title {
   font-size: 2rem;
   font-weight: 600;
+  width: 200px;
 }
 
 @media only screen and (max-width: 640px) {
   .posts-content {
-    margin-left: 0.4rem;
+    margin-left: 0;
+    margin-right: 0;
     width: 100%;
   }
+
 }

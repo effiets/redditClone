@@ -1,7 +1,7 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import { TailSpin } from "react-loader-spinner";
-import {GiHamburgerMenu } from "react-icons/gi";
-import {TiDelete} from 'react-icons/ti'
+// import {GiHamburgerMenu } from "react-icons/gi";
+// import {TiDelete} from 'react-icons/ti'
 import "./Subreddits.css";
 import { useSelector, useDispatch } from "react-redux";
 import { fetchSubReddits } from "../../store/subRedditSlice";
@@ -12,32 +12,31 @@ const Subreddits = () => {
   const isLoading = useSelector((state) => state.subReddit.isLoading);
   const hasError = useSelector((state) => state.subReddit.hasError);
   const subReddits = useSelector((state) => state.subReddit.subReddits);
-  const [isVissible, setIsVissible]= useState(true)
+  // const [isVissible, setIsVissible]= useState(true)
 
-  // let media_class='sub-container-remove';
   useEffect(() => {
     dispatch(fetchSubReddits());
   }, [dispatch]);
 
-  const mediaMenuHandler = () => {
+  // const mediaMenuHandler = () => {
     
-    setIsVissible(!isVissible)
-    // if(!isVissible){
-    //   media_class='sub-container'
+  //   setIsVissible(!isVissible)
+  //   // if(!isVissible){
+  //   //   media_class='sub-container'
 
-    // }else media_class='sub-container'
-    console.log(isVissible)
-  }
+  //   // }else media_class='sub-container'
+  //   console.log(isVissible)
+  // }
 
 
   return (
     <div className='sub-section'>
       <p className="sub-title">Subreddits</p>
-      <p className="burger-menu" onClick={mediaMenuHandler}>
+      {/* <p className="burger-menu" onClick={mediaMenuHandler}>
         {!isVissible && <GiHamburgerMenu/>}
-        {isVissible && <TiDelete/>}</p>
+        {isVissible && <TiDelete/>}</p> */}
 
-      <div className={'sub-container' + (isVissible ? '' : '-remove' )}>
+      <div className='sub-container'>
         {isLoading && (
           <TailSpin
             className="tailspin"

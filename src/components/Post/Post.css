@@ -64,4 +64,26 @@
     
 }
 
+@media only screen and (max-width: 640px) {
+  .post-container{
+    margin: 0rem;
+  }
+  .avatar{
+    width: 20px;
+    height: 20px;
+    margin-right:1rem;
+    margin-top:0.5rem
+  }
+  .author-name{
+    font-size: 0.8rem;
+  }
+
+  .time-info {
+    font-weight: 600;
+    font-size: 0.8rem;
+  }
+
+
+}
+
 

@@ -50,6 +50,7 @@ const Home = () => {
                 permalink={post.permalink}
                 num_comments={post.num_comments}
                 image={post.url}
+             
           
             />
           );

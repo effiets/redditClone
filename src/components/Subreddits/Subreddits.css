@@ -5,7 +5,7 @@
 }
 
 .sub-title {
-  font-size: 2rem;
+  font-size: rem;
   font-weight: 600;
 }
 
@@ -24,7 +24,6 @@
   margin: 1rem 0rem 1rem 0rem;
 }
 
-
 .subreddit {
   display: flex;
   flex-direction: row;
@@ -42,49 +41,18 @@
 }
 
 .sub-icon {
-  width: 40px;
-  height: 40px;
+  width: 50px;
+  height: 50px;
   border-radius: 50%;
   margin-right: 1rem;
   margin-left: 1rem;
-  border: 2px solid black;
-}
-
-.burger-menu {
-  display: none;
-  font-size: 2.5rem;
-  color: #00abb3;
-  margin: 0;
+  border: 3px solid black;
 }
 
 @media only screen and (max-width: 640px) {
-  .sub-title {
+  .sub-section {
     display: none;
   }
-
-  .burger-menu {
-    display: block;
-    z-index: 1;
-    margin-top: -110px;
-    margin-left: -2rem;
-  
-   
-  }
-
-  .sub-container {
-    background-color: #eaeaea;
-    opacity: 0.9;
-    border-radius: 7px;
-    width: 250px;
-    margin-top: 2rem;
-    margin-left: -15rem;
-  
-  }
-
-  .sub-container-remove{
-    display: none;
-  }
-
 
 
 }
