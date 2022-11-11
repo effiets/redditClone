@@ -12,7 +12,7 @@ const Subreddits = () => {
   const isLoading = useSelector((state) => state.subReddit.isLoading);
   const hasError = useSelector((state) => state.subReddit.hasError);
   const subReddits = useSelector((state) => state.subReddit.subReddits);
-  const [isVissible, setIsVissible]= useState(false)
+  const [isVissible, setIsVissible]= useState(true)
 
   // let media_class='sub-container-remove';
   useEffect(() => {
