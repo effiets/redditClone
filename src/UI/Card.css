@@ -1,0 +1,21 @@
+.card {
+  height: auto;
+  width: 900px;
+  background-color: #eaeaea;
+  border-radius: 14px;
+  border: 1px solid transparent;
+  box-shadow: 5px 5px #888888;
+  padding: 0.5rem 1rem;
+  margin-bottom: 4rem;
+}
+
+.card:hover {
+  border: 2px solid #888888;
+}
+
+@media only screen and (max-width: 640px) {
+  .card {
+    width: auto;
+    margin:1rem
+  }
+}
