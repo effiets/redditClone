@@ -1,8 +1,18 @@
 .posts-content {
   display: flex;
   flex-direction: column;
-  margin-left: 4rem;
-  margin-right: 8rem;
+  margin: 2rem 3rem;
+  min-width: 300px;
+  max-width: 1200px;
+  flex:auto;
+
+}
+
+.status-content{
+  margin-bottom: 2rem;
+  font-size: 2rem;
+  font-weight: 700;
+  color: gray;
 }
 
 .error_message {
@@ -12,17 +22,33 @@
   margin-top: 3rem;
   margin-left: rem;
 }
+
 .sub-title {
   font-size: 2rem;
   font-weight: 600;
   width: 200px;
+  margin-bottom: 4rem;
+}
+
+@media only screen and (min-width: 641px) and (max-width: 1024px){
+  .posts-content{
+    margin-left: 1rem;
+    margin-right: 1rem;
+  }
 }
 
 @media only screen and (max-width: 640px) {
+
   .posts-content {
-    margin-left: 0;
-    margin-right: 0;
+    margin-left: 0rem;
+    margin-right: 0rem;
     width: 100%;
   }
+
+  .status-content{
+    margin-left: 1rem;
+    font-size: 1rem;
+  }
+  
 
 }

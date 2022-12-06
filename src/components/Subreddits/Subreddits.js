@@ -1,7 +1,6 @@
 import React, { useEffect } from "react";
 import { TailSpin } from "react-loader-spinner";
-// import {GiHamburgerMenu } from "react-icons/gi";
-// import {TiDelete} from 'react-icons/ti'
+
 import "./Subreddits.css";
 import { useSelector, useDispatch } from "react-redux";
 import { fetchSubReddits } from "../../store/subRedditSlice";
@@ -12,29 +11,18 @@ const Subreddits = () => {
   const isLoading = useSelector((state) => state.subReddit.isLoading);
   const hasError = useSelector((state) => state.subReddit.hasError);
   const subReddits = useSelector((state) => state.subReddit.subReddits);
-  // const [isVissible, setIsVissible]= useState(true)
+
 
   useEffect(() => {
     dispatch(fetchSubReddits());
   }, [dispatch]);
 
-  // const mediaMenuHandler = () => {
-    
-  //   setIsVissible(!isVissible)
-  //   // if(!isVissible){
-  //   //   media_class='sub-container'
-
-  //   // }else media_class='sub-container'
-  //   console.log(isVissible)
-  // }
 
 
   return (
     <div className='sub-section'>
       <p className="sub-title">Subreddits</p>
-      {/* <p className="burger-menu" onClick={mediaMenuHandler}>
-        {!isVissible && <GiHamburgerMenu/>}
-        {isVissible && <TiDelete/>}</p> */}
+ 
 
       <div className='sub-container'>
         {isLoading && (
@@ -43,13 +31,12 @@ const Subreddits = () => {
             height="50"
             width="50"
             color="#00abb3"
-            radius="1"
+            radius="4"
             visible={true}
-            margin="2px"
           />
         )}
 
-        {!isLoading && hasError && <p>Something went wrong</p>}
+        {!isLoading && hasError && <p className="error-message">Something went wrong</p>}
         {!isLoading && (
           <ul>
             {subReddits.map((sub) => (

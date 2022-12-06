@@ -1,49 +1,48 @@
 header {
-  margin: 0;
-  overflow: hidden;
   background-color: #eaeaea;
   height: 100px;
   width: 100%;
-  position: relative;
   margin-bottom: 30px;
   display: flex;
+  flex:auto;
   align-items: center;
-  justify-content: space-between;
   box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.08), 0 2px 4px 0 rgba(0, 0, 0, 0.12);
-  
-}
 
+}
 
 .logo {
   display: flex;
   align-items: center;
   font-size: 2rem;
   font-weight: 600;
-  margin-left: 4rem;
+  margin: auto 4rem;
 }
+
 .logo-icon {
   font-size: 3rem;
   color: #00abb3;
+  margin-right: 0.5rem;
 }
 
 .logo span {
   color: #00abb3;
 }
 
-.search{
-  margin: 1rem;
+.search {
+  position: relative;
 }
+
 .search-input {
-  margin: 0;
   border-radius: 5px;
-  left: 40%;
-  height: 2.5rem;
+  height: 3rem;
+  width: 500px;
   background-image: url(../../resourses/icons8-search.svg);
   background-position: 1px -2px;
   background-repeat: no-repeat;
   padding-left: 3rem;
   font-size: 1.5rem;
 }
+
 ::placeholder {
   font-size: 1.5rem;
   text-align: left;
@@ -54,28 +53,62 @@ header {
   border-style: solid;
 }
 
-.mobile_icon {
-  font-size: 2.5rem;
-  margin-right: 2rem;
+.burger-menu {
+  position: absolute;
+  top: 2rem;
+  right: 1rem;
+
+  flex-direction: column;
+  justify-content: space-between;
+  width: 35px;
+  height: 25px;
   display: none;
 }
 
-@media only screen and (max-width: 640px) {
-  .mobile_icon {
-    display: block;
-    margin-right: 1rem;
-  }
-  .logo {
+.burger-menu .bar {
+  height: 4px;
+  width: 100%;
+  background-color: #00abb3;
+  border-radius: 10px;
+}
+
+@media only screen and (min-width: 641px) and (max-width: 1024px){
+  
+  .logo{
     margin-left: 1rem;
+    font-size: 1.5rem;
+    
+  }
+
+  .search-input{
+    width: 350px;
+  }
+}
+
+@media only screen and (max-width: 640px) {
+  .burger-menu {
+    display: flex;
+  }
+
+  .logo {
+    margin: auto 1rem;
   }
 
   .logo p {
     display: none;
   }
 
+  .search {
+    width: 50%;
+  }
+
   .search-input {
-    width: 70%;
-    margin-left: 3rem;
-    margin-right: 2rem;
+    width: 100%;
+    background-image: none;
+    padding-left: 1rem;
+  }
+
+  .search-input::placeholder {
+    font-size: 1rem;
   }
 }

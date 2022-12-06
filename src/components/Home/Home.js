@@ -22,10 +22,11 @@ const Home = () => {
   }, [dispatch, searchTerm])
 
 
-  console.log(reddits)
+ 
   return (
     <div className="posts-content">
-      <p className="sub-title">{isLoading ? "Loading..." : reddits.subreddit}</p>
+      <div className="status-content">
+      <p className="subreddit-info">{selectedSubReddit}</p>
       {isLoading && (
         <TailSpin
           height="100"
@@ -37,8 +38,8 @@ const Home = () => {
       )}
 
       {!isLoading && hasError && <p className="error_message">Something went wrong</p>}
-      {!isLoading && reddits.length === 0 && <p className='error_message'>Please try again</p>}
-      {!isLoading &&
+      {!isLoading && reddits.length === 0 && <p className='error_message'>Please try again</p>}</div>
+      {!isLoading && 
         reddits.map((post) => {
           return (
             <Post

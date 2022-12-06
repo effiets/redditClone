@@ -1,12 +1,11 @@
 import "./Header.css";
 import { FaReddit } from "react-icons/fa";
-
 import { useDispatch, useSelector } from "react-redux";
 import { fetchSearchReddits} from "../../store/redditSlice";
 import { useState } from "react";
 import { useEffect } from "react";
 
-const Header = () => {
+const Header = (props) => {
   const dispatch = useDispatch();
   const searchTerm = useSelector((state) => state.reddit.searchTerm);
 
@@ -16,6 +15,7 @@ const Header = () => {
     setSearchTermLocal(e.target.value);
   }
   
+
 
   useEffect(()=> {
     setSearchTermLocal(searchTerm)
@@ -27,6 +27,7 @@ const Header = () => {
     e.preventDefault();
     dispatch(fetchSearchReddits(searchTermLocal));
   };
+
 
 
 
@@ -47,10 +48,12 @@ const Header = () => {
           onChange={onChangeSerchTermHandler}
         />
       </form>
+      <div className="burger-menu" onClick={() =>props.setVisibility()}>
+        <span class='bar'></span>
+        <span class='bar'></span>
+        <span class='bar'></span>
+      </div>
 
-      {/* {!isVissible && <GiHamburgerMenu className="mobile_icon" onClick={mobileMenuHandler}/>}
-      {isVissible && <GrClose className="mobile_icon" onClick={mobileMenuHandler}/>}
-       */}
     </header>
   );
 };

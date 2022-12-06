@@ -3,13 +3,17 @@
   margin-top: 10px;
   display: flex;
   flex-direction: column;
+
 }
 
 .info-container {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
 }
+
 .info-container .time-info{
     font-size: 1rem;
 }
@@ -18,17 +22,19 @@
 .author-info {
   display: flex;
   flex-direction: row;
+  align-items: center;
+ 
 }
 
 .avatar {
   height: 40px;
   width: 40px;
-  margin-right: 1.5rem;
+  margin-right: 0.5rem;
 }
  .author-name {
   font-size: 1rem;
   font-weight: 600;
-  margin-top: 0.7rem;
+ 
 }
 
 .time-info {
@@ -41,10 +47,9 @@
 }
 
 
-.post-container .reddit-container p{
+.post-container .reddit-container{
     font-size: 1.5rem;
     font-weight: 400;
-    
 }
 
 .btn-comment{
@@ -54,6 +59,7 @@
     border: 1px solid #f5f0f0;
     padding: 0.7rem;
     border-radius: 8px;
+    margin:1.5rem auto;
 }
 
 
@@ -64,10 +70,37 @@
     
 }
 
+
+@media only screen and (min-width: 641px) and (max-width: 1024px){
+
+ .post-container{
+  margin: 0rem;
+ }
+
+ .avatar{
+  width: 30px;
+  height: 30px;
+  margin-right:0.5rem;
+  margin-top:0.5rem
+}
+.author-name{
+  font-size: 0.8rem;
+}
+
+.time-info {
+  font-weight: 600;
+  font-size: 0.5rem;
+}
+
+
+
+}
+
 @media only screen and (max-width: 640px) {
   .post-container{
     margin: 0rem;
   }
+
   .avatar{
     width: 20px;
     height: 20px;
@@ -78,7 +111,7 @@
     font-size: 0.8rem;
   }
 
-  .time-info {
+  .time-info{
     font-weight: 600;
     font-size: 0.8rem;
   }

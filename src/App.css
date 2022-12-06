@@ -1,13 +1,31 @@
 .App {
-  text-align: left;
   font-family: Arial, Helvetica, sans-serif;
 }
 
 .home-content{
- display:grid;
- width: 100%;
+ display: flex;
+ justify-content: space-between;
  height: auto;
- grid-template-columns:4fr 1fr;
+ margin-top: 4rem;
+ margin-left: 2rem;
+ margin-right: 2rem;
+
 }
+
+
+@media only screen and (min-width: 641px) and (max-width: 1024px){
+  .home-content{
+    margin-left: 0rem;
+    margin-right: 0rem;
+  }
+}
+
+@media only screen and (max-width: 640px) {
+
+  .home-content{
+    margin-left: 0rem;
+    margin-right: 0rem;
+    width: 100%;
+  }}
 
 

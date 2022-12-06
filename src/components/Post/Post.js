@@ -14,16 +14,15 @@ const Post = (props) => {
 
   const fetchComments = async () => {
     try {
-    setLoadingComments(true)
-    const response = await fetch(
-      `https://www.reddit.com${props.permalink}.json`
-    );
+      setLoadingComments(true);
+      const response = await fetch(
+        `https://www.reddit.com${props.permalink}.json`
+      );
 
-    if (!response.ok) {
-      throw new Error("Something went wrong!!");
-    }
+      if (!response.ok) {
+        throw new Error("Something went wrong!!");
+      }
 
-    
       const json = await response.json();
 
       const commentData = json[1].data.children.map((comment) => {
@@ -46,9 +45,7 @@ const Post = (props) => {
   const bringCommentsHandler = () => {
     if (bringComments) {
       setBringComments(false);
-      setLoadError(null)
-
-     
+      setLoadError(null);
     } else {
       fetchComments();
       setBringComments(true);
@@ -57,7 +54,7 @@ const Post = (props) => {
 
   return (
     <Card>
-      <div className="post-container">
+      <article className="post-container">
         <div className="info-container">
           <div className="author-info">
             <img
@@ -70,16 +67,28 @@ const Post = (props) => {
           <p className="time-info">{moment.unix(props.date).fromNow()}</p>
         </div>
         <div className="reddit-container">
-          {props.image !== null && <img className="post_image" src={props.image} alt=''/>}
-          {props.post_hint }
+          {props.image !== null && (
+            <img className="post_image" src={props.image} alt="" />
+          )}
+          {props.post_hint}
           <p>{props.post}</p>
 
           <button className="btn-comment" onClick={bringCommentsHandler}>
-            {bringComments ? "Hide" : "Show"} Comments  | <span>{props.num_comments}</span>
+            {bringComments ? "Hide" : "Show"} Comments |{" "}
+            <span>{props.num_comments}</span>
           </button>
-          {loadingComments && <TailSpin />}
+          {loadingComments && (
+            <TailSpin
+              height="80"
+              width="80"
+              color="#00abb3"
+              radius="1"
+              visible={true}
+            />
+          )}
           {!loadingComments && <p>{loadError}</p>}
-          {!loadingComments && bringComments &&
+          {!loadingComments &&
+            bringComments &&
             !loadError &&
             commentsList.map((comment) => {
               return (
@@ -92,7 +101,7 @@ const Post = (props) => {
               );
             })}
         </div>
-      </div>
+      </article>
     </Card>
   );
 };

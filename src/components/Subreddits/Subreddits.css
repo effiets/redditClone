@@ -5,8 +5,9 @@
 }
 
 .sub-title {
-  font-size: rem;
+  font-size: 2rem;
   font-weight: 600;
+  margin-bottom: 3rem;
 }
 
 .sub-container {
@@ -49,10 +50,65 @@
   border: 3px solid black;
 }
 
-@media only screen and (max-width: 640px) {
+.error-message {
+  font-size: 1rem;
+  font-weight: 700;
+  color: brown;
+  margin:2rem
+}
+
+
+@media only screen and (min-width: 641px) and (max-width: 1024px){
   .sub-section {
-    display: none;
+    margin-right: 1rem;
+  }
+
+  .sub-container{
+    width: 250px;
+  }
+
+  
+ 
+    .sub-icon{
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      margin-right: 0.5rem;
+      margin-left: 0.5rem;
+
+    }
   }
 
 
+
+
+@media only screen and (max-width: 640px) {
+  .sub-title {
+    display: none;
+  }
+
+  .sub-container {
+    width:auto;
+    position: absolute;
+    top: 5rem;
+    right: 1rem;
+    z-index: 5;
+    background-color: rgba(234, 234, 234, 0.9);
+  }
+
+  .subreddit {
+    font-size: 0.8rem;
+    margin-right: 1rem;
+  }
+
+  .sub-section{
+    margin-right: 1rem;
+  }
+
+  .sub-icon{
+    width: 40px;
+  height: 40px;
+  margin-right: 0.5rem;
+  margin-left: 0.5rem;
+  }
 }
