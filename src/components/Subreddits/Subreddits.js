@@ -12,19 +12,15 @@ const Subreddits = () => {
   const hasError = useSelector((state) => state.subReddit.hasError);
   const subReddits = useSelector((state) => state.subReddit.subReddits);
 
-
   useEffect(() => {
     dispatch(fetchSubReddits());
   }, [dispatch]);
 
-
-
   return (
-    <div className='sub-section'>
+    <div className="sub-section">
       <p className="sub-title">Subreddits</p>
- 
 
-      <div className='sub-container'>
+      <div className="sub-container">
         {isLoading && (
           <TailSpin
             className="tailspin"
@@ -36,11 +32,14 @@ const Subreddits = () => {
           />
         )}
 
-        {!isLoading && hasError && <p className="error-message">Something went wrong</p>}
+        {!isLoading && hasError && (
+          <p className="error-message">Something went wrong</p>
+        )}
         {!isLoading && (
           <ul>
             {subReddits.map((sub) => (
               <li
+                role="list"
                 className="subreddit"
                 key={sub.id}
                 onClick={() => dispatch(setSelectedSubReddit(sub.url))}

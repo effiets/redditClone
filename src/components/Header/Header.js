@@ -34,7 +34,7 @@ const Header = (props) => {
   return (
     <header>
       <div className="logo">
-        <FaReddit className="logo-icon" />
+        <FaReddit className="logo-icon"/>
         <p>
           Reddit<span>Clone</span>
         </p>
@@ -49,9 +49,9 @@ const Header = (props) => {
         />
       </form>
       <div className="burger-menu" onClick={() =>props.setVisibility()}>
-        <span class='bar'></span>
-        <span class='bar'></span>
-        <span class='bar'></span>
+        <span className='bar'></span>
+        <span className='bar'></span>
+        <span className='bar'></span>
       </div>
 
     </header>

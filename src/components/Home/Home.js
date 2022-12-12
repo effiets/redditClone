@@ -44,6 +44,7 @@ const Home = () => {
           return (
             <Post
                 key={post.id}
+                data-testid="test-item"
                 author_name={post.author}
                 date={post.created_utc}
                 post={post.title}
