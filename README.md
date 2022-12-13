@@ -3,6 +3,8 @@
 This reddit client uses the Reddit API to fetch posts of the most popular subreddits and their post comments. It also allows the user to search for posts of any subject. 
 
 
+[live version](https://effie-reddit-clone.netlify.app)
+
 ## Technologies
 
   * HTML
